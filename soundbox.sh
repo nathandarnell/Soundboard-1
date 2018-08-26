@@ -1,3 +1,3 @@
 #!/bin/bash
-cd /home/pi/Soundboard/
-python  /home/pi/Soundboard/soundbox.py
+cd /home/pi/Soundboard-1/
+python  /home/pi/Soundboard-1/soundbox.py
