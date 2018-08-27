@@ -5,7 +5,7 @@ import os
 import RPi.GPIO as GPIO
 
 GPIO.setmode(GPIO.BOARD) # https://sourceforge.net/p/raspberry-gpio-python/wiki/BasicUsage/
-chan_list = [7]    # add as many channels as you want!
+chan_list = [7,11]    # add as many channels as you want!
                        # you can tuples instead i.e.:
                        #   chan_list = (11,12)
 GPIO.setup(chan_list, GPIO.IN, pull_up_down=GPIO.PUD_UP) # https://sourceforge.net/p/raspberry-gpio-python/wiki/Inputs/
