@@ -16,12 +16,17 @@ GPIO.setup(chan_list, GPIO.IN, pull_up_down=GPIO.PUD_DOWN) # https://sourceforge
 prevPath=""
 currPath=""
 
-mixer.init()
+pygame.init()
+
+pygame.mixer.init()
 
 def playSound(path):
-    mixer.music.stop()
-    mixer.music.load(path)
-    mixer.music.play()
+    pygame.mixer.music.stop()
+    pygame.mixer.music.load(path)
+    pygame.mixer.music.play()
+
+
+
 
 # https://sourceforge.net/p/raspberry-gpio-python/wiki/Inputs/
 GPIO.add_event_detect(chan_list, GPIO.RISING, callback=playSound, bouncetime=200)  # add rising edge detection on a channel 
