@@ -8,4 +8,5 @@ sudo usermod -a -G audio pi
 Enable it to run at boot:
 
 sudo cp soundboard.service /etc/systemd/system/
+
 sudo systemctl enable soundboard
