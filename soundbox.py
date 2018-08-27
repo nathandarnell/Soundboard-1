@@ -5,7 +5,7 @@ import os
 import RPi.GPIO as GPIO
 
 GPIO.setmode(GPIO.BOARD) # https://sourceforge.net/p/raspberry-gpio-python/wiki/BasicUsage/
-gpio_list = [7,11]    # Pins to poll
+gpio_list = [7,11]    # Pins to poll https://pinout.xyz/pinout/pin11_gpio17
 GPIO.setup(gpio_list, GPIO.IN, pull_up_down=GPIO.PUD_UP) # https://sourceforge.net/p/raspberry-gpio-python/wiki/Inputs/
 
 pygame.init()
