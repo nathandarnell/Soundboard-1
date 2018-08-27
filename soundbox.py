@@ -27,7 +27,7 @@ def getPath(pin):
     if os.path.exists(pinMP3):
         print ("pinMP3 is here!")
         pin += '.mp3'
-    elif:
+    elif os.path.exists(pinWAV):
         print ("WAV is here!")
         pin += '.wav'
     else:
