@@ -14,6 +14,7 @@ pygame.init()
 pygame.mixer.init()
 
 def getPath(pin):
+    pin = str(pin)
     pin += '.wav'
     playSound(pin)
 
