@@ -2,6 +2,8 @@
 Description=Sound board service
 
 [Service]
+Type=simple
+User=pi
 ExecStart=/home/pi/Soundboard-1/soundbox.sh
 [Install]
 WantedBy=multi-user.target
