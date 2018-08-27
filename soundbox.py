@@ -13,12 +13,12 @@ chan_list = [7]    # add as many channels as you want!
                        #   chan_list = (11,12)
 GPIO.setup(chan_list, GPIO.IN, pull_up_down=GPIO.PUD_DOWN) # https://sourceforge.net/p/raspberry-gpio-python/wiki/Inputs/
 
-prevPath=""
-currPath=""
+#prevPath=""
+#currPath=""
 
-pygame.init()
+#pygame.init()
 
-pygame.mixer.init()
+mixer.init()
 
 def playSound(path):
     pygame.mixer.music.stop()
