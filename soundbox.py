@@ -28,7 +28,7 @@ def playSound(path):
 
 # https://sourceforge.net/p/raspberry-gpio-python/wiki/Inputs/
 for pin in chan_list:
-GPIO.add_event_detect(pin, GPIO.RISING, callback=playSound, bouncetime=200)  # add rising edge detection on a channel 
+    GPIO.add_event_detect(pin, GPIO.RISING, callback=playSound, bouncetime=200)  # add rising edge detection on a channel 
 #do_something()
 #if GPIO.event_detected(channel):
 #    print('Button pressed')
