@@ -19,9 +19,16 @@ pygame.mixer.init()
 
 def getPath(pin):
     pin = str(pin) # https://www.crybit.com/convert-integer-string-python/
-    pin += '.mp3'
-    playSound(pin)
 
+# Check for the right extension, mp3 first https://stackoverflow.com/questions/33400682/check-if-a-directory-contains-a-file-with-a-given-extension
+    if glob.glob(pin +'.mp3')`:
+        pin += '.mp3'
+    elif glob.glob(pin +'.wav')`:
+        pin += '.wav'
+    else
+        return
+# Play the sound
+    playSound(pin)
 
 def playSound(path):
     pygame.mixer.music.stop()
