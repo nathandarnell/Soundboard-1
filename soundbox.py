@@ -3,7 +3,7 @@
 import time
 from pygame import mixer # Load the required library
 import os
-import dircache
+#import dircache
 
 import RPi.GPIO as GPIO
 
