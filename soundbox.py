@@ -3,7 +3,6 @@ import time
 import pygame
 import os
 import RPi.GPIO as GPIO
-import glob
 
 # https://sourceforge.net/p/raspberry-gpio-python/wiki/BasicUsage/
 # https://raspi.tv/2014/rpi-gpio-update-and-detecting-both-rising-and-falling-edges
@@ -16,17 +15,25 @@ dir_path = os.path.dirname(os.path.realpath(__file__)) #https://stackoverflow.co
 pygame.init()
 pygame.mixer.init()
 
-
 def getPath(pin):
     pin = str(pin) # https://www.crybit.com/convert-integer-string-python/
 
 # Check for the right extension, mp3 first https://stackoverflow.com/questions/33400682/check-if-a-directory-contains-a-file-with-a-given-extension
-    if glob.glob(pin +'.mp3')`:
+
+    pinMP3 = pin + ".mp3";
+    pinWAV = pin + ".wav";
+
+    # One of many options: https://stackoverflow.com/questions/82831/how-do-i-check-whether-a-file-exists
+    if os.path.exists(pinMP3):
+        print ("pinMP3 is here!")
         pin += '.mp3'
-    elif glob.glob(pin +'.wav')`:
+    elif:
+        print ("WAV is here!")
         pin += '.wav'
-    else
+    else:
+        print ("MP3 or WAV is missing!")
         return
+
 # Play the sound
     playSound(pin)
 
