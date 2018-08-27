@@ -17,10 +17,10 @@ pygame.init()
 pygame.mixer.init()
 
 def playSound(path):
-#    pygame.mixer.music.stop()
-#    pygame.mixer.music.load(path)
+    pygame.mixer.music.stop()
+    pygame.mixer.music.load(path)
     print(path)
-#    pygame.mixer.music.play()
+    pygame.mixer.music.play()
 
 try:
 # https://sourceforge.net/p/raspberry-gpio-python/wiki/Inputs/
