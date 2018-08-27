@@ -12,7 +12,7 @@ GPIO.setmode(GPIO.BOARD) # https://sourceforge.net/p/raspberry-gpio-python/wiki/
 chan_list = [7]    # add as many channels as you want!
                        # you can tuples instead i.e.:
                        #   chan_list = (11,12)
-GPIO.setup(chan_list, GPIO.IN, pull_up_down=GPIO.PUD_DOWN) # https://sourceforge.net/p/raspberry-gpio-python/wiki/Inputs/
+GPIO.setup(7, GPIO.IN, pull_up_down=GPIO.PUD_DOWN) # https://sourceforge.net/p/raspberry-gpio-python/wiki/Inputs/
 
 #prevPath=""
 #currPath=""
@@ -28,8 +28,8 @@ def playSound(path):
 #    pygame.mixer.music.play()
 
 # https://sourceforge.net/p/raspberry-gpio-python/wiki/Inputs/
-for pin in chan_list:
-    GPIO.add_event_detect(pin, GPIO.RISING, callback=playSound, bouncetime=200)  # add rising edge detection on a channel 
+#for pin in chan_list:
+    GPIO.add_event_detect(7, GPIO.RISING, callback=playSound, bouncetime=200)  # add rising edge detection on a channel 
 #do_something()
 #if GPIO.event_detected(channel):
 #    print('Button pressed')
