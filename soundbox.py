@@ -5,16 +5,14 @@ import os
 import RPi.GPIO as GPIO
 
 GPIO.setmode(GPIO.BOARD) # https://sourceforge.net/p/raspberry-gpio-python/wiki/BasicUsage/
-chan_list = [7,11]    # add as many channels as you want!
-                       # you can tuples instead i.e.:
-                       #   chan_list = (11,12)
-GPIO.setup(chan_list, GPIO.IN, pull_up_down=GPIO.PUD_UP) # https://sourceforge.net/p/raspberry-gpio-python/wiki/Inputs/
+gpio_list = [7,11]    # Pins to poll
+GPIO.setup(gpio_list, GPIO.IN, pull_up_down=GPIO.PUD_UP) # https://sourceforge.net/p/raspberry-gpio-python/wiki/Inputs/
 
 pygame.init()
 pygame.mixer.init()
 
 def getPath(pin):
-    pin = str(pin)
+    pin = str(pin) # https://www.crybit.com/convert-integer-string-python/
     pin += '.wav'
     playSound(pin)
 
@@ -26,7 +24,7 @@ def playSound(path):
 
 try:
 # https://sourceforge.net/p/raspberry-gpio-python/wiki/Inputs/
-    for pin in chan_list:
+    for pin in gpio_list:
         GPIO.add_event_detect(pin, GPIO.FALLING, callback=getPath, bouncetime=200)  # add rising edge detection on a channel
 
     while 1:
