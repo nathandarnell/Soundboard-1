@@ -1,7 +1,8 @@
 #from pad4pi import rpi_gpio
 #import random
 import time
-from pygame import mixer # Load the required library
+#from pygame import mixer # Load the required library
+import pygame
 import os
 #import dircache
 
@@ -16,9 +17,9 @@ GPIO.setup(chan_list, GPIO.IN, pull_up_down=GPIO.PUD_DOWN) # https://sourceforge
 #prevPath=""
 #currPath=""
 
-#pygame.init()
+pygame.init()
 
-mixer.init()
+pygame.mixer.init()
 
 def playSound(path):
     pygame.mixer.music.stop()
