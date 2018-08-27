@@ -10,11 +10,12 @@ chan_list = [7,11]    # add as many channels as you want!
                        #   chan_list = (11,12)
 GPIO.setup(chan_list, GPIO.IN, pull_up_down=GPIO.PUD_UP) # https://sourceforge.net/p/raspberry-gpio-python/wiki/Inputs/
 
-
-
 pygame.init()
-
 pygame.mixer.init()
+
+def getPath(pin):
+    pin += '.wav'
+    playSound(pin)
 
 def playSound(path):
 #    pygame.mixer.music.stop()
@@ -25,7 +26,7 @@ def playSound(path):
 try:
 # https://sourceforge.net/p/raspberry-gpio-python/wiki/Inputs/
     for pin in chan_list:
-        GPIO.add_event_detect(pin, GPIO.FALLING, callback=playSound, bouncetime=200)  # add rising edge detection on a channel
+        GPIO.add_event_detect(pin, GPIO.FALLING, callback=getPath, bouncetime=200)  # add rising edge detection on a channel
 
     while 1:
         time.sleep(10)
