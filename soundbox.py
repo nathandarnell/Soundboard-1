@@ -24,11 +24,11 @@ def playSound(path):
 
 try:
 # https://sourceforge.net/p/raspberry-gpio-python/wiki/Inputs/
-for pin in chan_list:
-    GPIO.add_event_detect(pin, GPIO.FALLING, callback=playSound, bouncetime=200)  # add rising edge detection on a channel
+    for pin in chan_list:
+        GPIO.add_event_detect(pin, GPIO.FALLING, callback=playSound, bouncetime=200)  # add rising edge detection on a channel
 
-    while 1:
-        time.sleep(10)
+        while 1:
+            time.sleep(10)
 
 except KeyboardInterrupt:
     GPIO.cleanup()       # clean up GPIO on CTRL+C exit
