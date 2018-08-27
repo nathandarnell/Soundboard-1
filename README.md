@@ -1,8 +1,9 @@
 
 Python library installation:
-
 pip install pygame
 
+Get the pi user to be able to play audio
+sudo usermod -a -G audio pi
 
 Enable it to run at boot:
 
