@@ -46,7 +46,7 @@ def playSound(path):
 try:
 # https://sourceforge.net/p/raspberry-gpio-python/wiki/Inputs/
     for pin in gpio_list:
-        GPIO.add_event_detect(pin, GPIO.FALLING, callback=getPath, bouncetime=200)  # add rising edge detection on a channel
+        GPIO.add_event_detect(pin, GPIO.FALLING, callback=getPath, bouncetime=400)  # add rising edge detection on a channel
 
     while 1:
         time.sleep(10)
